@@ -1,14 +1,18 @@
 package com.mbhatia.springbootzookeeperdistributedcrud.controllers;
 
+import com.mbhatia.springbootzookeeperdistributedcrud.models.Person;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 @RestController
 @RequestMapping("/v1/persons")
-public class CRUDController {
+public class PersonController {
     @GetMapping
-    public String getPersons(){
-        return "Person";
+    public List<Person> getPersons(){
+        return Arrays.asList(new Person(1, "Person1"), new Person(2,"Person2"));
     }
 
     @PostMapping
