@@ -7,7 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.mbhatia.springbootzookeeperdistributedcrud.controllers")
+@ComponentScan(basePackages = {"com.mbhatia.springbootzookeeperdistributedcrud.controllers",
+                                "com.mbhatia.springbootzookeeperdistributedcrud.services",
+                                "com.mbhatia.springbootzookeeperdistributedcrud.configuration"})
 public class SpringBootZookeeperDistributedCrudApplication {
 
     public static void main(String[] args) {
