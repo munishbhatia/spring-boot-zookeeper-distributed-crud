@@ -6,36 +6,28 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@Order(Ordered.LOWEST_PRECEDENCE)
-public class PersonServiceInMemoryImpl implements PersonService {
-    private static List<Person> people = new ArrayList<>(5);
-
-    static {
-        people.add(new Person(1, "Person1"));
-        people.add(new Person(2,"Person2"));
-    }
-
+@Order(Ordered.HIGHEST_PRECEDENCE)
+public class PersonServiceJPAImpl implements PersonService {
     @Override
     public List<Person> getPersons() {
-        return people;
+        return null;
     }
 
     @Override
     public void savePerson(Person person) {
-        people.add(person);
+
     }
 
     @Override
     public void removeAllPeople() {
-        people.clear();
+
     }
 
     @Override
-    public void saveAllPeople(List<Person> persons) {
-        people.addAll(persons);
+    public void saveAllPeople(List<Person> people) {
+
     }
 }
